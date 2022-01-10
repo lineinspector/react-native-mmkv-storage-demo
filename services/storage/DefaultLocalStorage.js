@@ -1,7 +1,7 @@
 import MMKVStorage from 'react-native-mmkv-storage';
 import Logger from '../logger';
 
-export const INSTANCE_ID = 'LineInspectorV1';
+export const INSTANCE_ID = 'TestV1';
 
 export default class LocalStorage {
   constructor(instanceId) {

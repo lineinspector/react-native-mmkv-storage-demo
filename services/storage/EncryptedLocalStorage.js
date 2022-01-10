@@ -2,14 +2,13 @@ import MMKVStorage from 'react-native-mmkv-storage';
 // eslint-disable-next-line import/no-cycle
 import Logger from '../logger';
 
-export const ENCRYPTED_INSTANCE_ID = 'LineInspectorEncryptedV1';
-export const LEGACY_ENCRYPTED_INSTANCE_ID = 'LineInspectorV1';
+export const ENCRYPTED_INSTANCE_ID = 'TestEncryptedV1';
 
 export default class EncryptedLocalStorage {
   constructor(instanceId) {
     this.instanceId = instanceId;
     this.storage = new MMKVStorage.Loader()
-      .withServiceName('com.lineinspector.app1.LineInspectorEncryptedV1')
+      .withServiceName('com.test.app1.TestV1')
       .withInstanceID(this.instanceId)
       .withEncryption()
       .initialize();

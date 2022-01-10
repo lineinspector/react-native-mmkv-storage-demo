@@ -20,10 +20,7 @@ import {
 
 import {
   Colors,
-  DebugInstructions,
   Header,
-  LearnMoreLinks,
-  ReloadInstructions,
 } from "react-native/Libraries/NewAppScreen";
 
 const styles = StyleSheet.create({
@@ -48,6 +45,11 @@ const styles = StyleSheet.create({
 const IS_LOGGEDIN_KEY = "isLoggedIn";
 
 export default class App extends Component {
+
+  /**
+   * 
+   * @param {*} props Initialize app
+   */
   constructor(props) {
     super(props);
 
@@ -72,6 +74,11 @@ export default class App extends Component {
     });
   }
 
+  /**
+   * Render app contents
+   * @param {*} isLoggedIn 
+   * @returns 
+   */
   renderContents(isLoggedIn) {
     if(isLoggedIn){
       return (<Text>You are logged in!</Text>);
@@ -80,6 +87,9 @@ export default class App extends Component {
     return (<Button onPress={this.onLogin} title="Login">Login</Button>);
   }
 
+  /**
+   * Handle login
+   */
   onLogin = async () => {
     const value = 'YES';
     await EncryptedStorage.setItem(IS_LOGGEDIN_KEY, value);
@@ -88,6 +98,9 @@ export default class App extends Component {
     })
   } 
 
+  /**
+   * Render application
+   */
   render() {
     const { isLoading, isLoggedIn } = this.state;
     const backgroundStyle = {
